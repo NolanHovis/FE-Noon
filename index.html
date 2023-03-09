@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Learning Resources</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">List Of Resources</h1>
+    <div>
+      <b>Create Resource</b>
+    </div>
+    <form id="form-resource">
+      <input type="text" name="content" id="content" placeholder="Content..." />
+      <input type="text" name="link" id="link" placeholder="Link..." />
+      <button type="button" id="create">Create Resource</button>
+    </form>
+    <div class="resource-container"></div>
+  </body>
+  <script src="./main.js"></script>
+  <script src="./src/helpers.js"></script>
+  <script src="./api/resources.js"></script>
+</html>
