@@ -1,3 +1,9 @@
+const form = document.querySelector("#form-resource");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  onCreateResource(event);
+});
+
 getResources().then((data) => {
   console.log(data);
   data.forEach((resource) => {
@@ -11,11 +17,5 @@ function getResources() {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  }).then((res) => res.json());
 }
-
-const btn = document.querySelector("#create");
-btn.addEventListener("click", (event) => {
-  event.preventDefault();
-  onCreateResource(event);
-});

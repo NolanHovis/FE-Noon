@@ -1,5 +1,5 @@
 function appendResourceToDOM(resource) {
-  const container = document.querySelector(".resources-container");
+  const container = document.querySelector(".resource-container");
   const card = document.createElement("div");
   const contentElem = document.createElement("a");
   const editBtn = document.createElement("button");
@@ -10,7 +10,7 @@ function appendResourceToDOM(resource) {
   });
   card.appendChild(editBtn);
 
-  card.classList("card");
+  card.classList.add("card");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
@@ -29,20 +29,20 @@ function appendResourceToDOM(resource) {
   container.appendChild(card);
 }
 
-function onCreateResource(e) {
+const onCreateResource = (e) => {
   console.log(e);
-  const content = e.target.value.content;
-  const link = e.target.value.link;
+  const content = e.target.content.value;
+  const link = e.target.link.value;
   const resource = { content, link };
 
-  onCreateResource(resource).then((data) => {
+  createResource(resource).then((data) => {
     if (data.errors) {
       console.log(data.errors);
     } else {
       appendResourceToDOM(data);
     }
   });
-}
+};
 
 const onEditResource = (resource, card, cardElements) => {
   const editForm = document.createElement("form");

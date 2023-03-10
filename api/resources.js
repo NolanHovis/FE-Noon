@@ -14,7 +14,7 @@ function updateResource(id, updatedResource) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: Json.stringify(updatedResource),
+    body: JSON.stringify(updatedResource),
   }).then((res) => res.json());
 }
 
